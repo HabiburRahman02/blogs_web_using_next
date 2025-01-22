@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       >
         <main>
           <Navbar></Navbar>
-         <div className="min-h-screen container mx-auto px-12">
+         <div className="min-h-screen container mx-auto px-12 bg-gray-100">
          {children}
          </div>
          <Footer></Footer>
