@@ -3,7 +3,7 @@ import BlogCard from "@/components/BlogCard";
 export default async function Home() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
   const blogs = await res.json();
-console.log(blogs);
+  // console.log(blogs);
   return (
     <div>
       <h2 className="text-2xl text-center py-6">Blog Posts - {blogs.length}</h2>
