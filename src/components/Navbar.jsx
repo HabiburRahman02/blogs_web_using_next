@@ -12,7 +12,7 @@ const Navbar = ({ user }) => {
                     <div className="text-xl font-bold">My Blogs</div>
                 </Link>
                 <nav>
-                    <ul className='flex space-x-4'>
+                    <ul className='flex space-x-4 items-center'>
                         <li>
                             <Link href="/" className="hover:underline">
                                 Home
@@ -28,7 +28,7 @@ const Navbar = ({ user }) => {
                                 </li>
                                 <li>
                                     <LogoutLink>
-                                        <button className="hover:underline" >Logout</button>
+                                        <button className="bg-white text-black py-2 px-4 font-semibold rounded-sm hover:bg-gray-200" >Logout</button>
                                     </LogoutLink>
                                 </li>
 
@@ -37,7 +37,7 @@ const Navbar = ({ user }) => {
                                 <>
                                     <li>
                                         <LoginLink>
-                                            <button className="hover:underline" >Login</button>
+                                            <button className="bg-white text-black py-2 px-4 font-semibold rounded-sm hover:bg-gray-200" >Login</button>
                                         </LoginLink>
                                     </li>
                                 </>
