@@ -1,24 +1,11 @@
 "use client"
-import { useKindeAuth } from '@kinde-oss/kinde-auth-nextjs';
+import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
 
 const Navbar = () => {
-    const { getUser, isAuthenticated } = useKindeAuth();
-    const [user, setUser] = useState(null);
-    console.log(user);
-
-    useEffect(() => {
-        if (isAuthenticated) {
-            const userData = getUser();
-            setUser(userData);
-        } else {
-            setUser(null);
-        }
-    }, [isAuthenticated]);
 
     return (
-        <div className="bg-gray-800 text-white p-4">
+        <div className="bg-gray-800 text-white p-6">
             <div className="container mx-auto flex justify-between items-center">
                 <Link href='/'>
                     <div className="text-xl font-bold">My Blogs</div>
@@ -30,23 +17,23 @@ const Navbar = () => {
                                 Home
                             </Link>
                         </li>
-                        {user ? (
-                            <li>
-                                <Link href="/profile" className="hover:underline">
-                                    Profile
-                                </Link>
-                            </li>
-                        ) : (
-                            <li>
-                                <Link href="/login" className="hover:underline">
-                                    Login
-                                </Link>
-                            </li>
-                        )}
+                        {/* {user ? ( */}
+                        {/* <li>
+                            <Link href="/profile" className="hover:underline">
+                                Profile
+                            </Link>
+                        </li> */}
+                        {/* ) : ( */}
+                        <li>
+                            <LoginLink>
+                                <button className="btn">Login</button>
+                            </LoginLink>
+                        </li>
+                        {/* )} */}
                     </ul>
                 </nav>
             </div>
-        </div>
+        </div >
     );
 };
 

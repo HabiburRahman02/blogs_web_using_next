@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <div>
       <h2 className="text-2xl text-center py-6">Blog Posts - {blogs.length}</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
         {
           blogs.map(blog => <BlogCard
             key={blog.id}
@@ -15,6 +15,7 @@ export default async function Home() {
           ></BlogCard>)
         }
       </div>
+    
     </div>
   );
 }
