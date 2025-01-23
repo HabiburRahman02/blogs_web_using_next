@@ -4,7 +4,8 @@ import Link from 'next/link';
 
 const Navbar = ({ user }) => {
 
-    console.log('form nav', user);
+    // console.log('form nav', user);
+
     return (
         <div className="bg-gray-800 text-white p-6">
             <div className="container mx-auto flex justify-between items-center">
