@@ -18,21 +18,30 @@ const Navbar = ({ user }) => {
                                 Home
                             </Link>
                         </li>
-                        <li>
-                            {
-                                user ? <>
+
+                        {
+                            user ? <>
+                                <li>
+                                    <Link href="/profile" className="hover:underline">
+                                        Profile
+                                    </Link>
+                                </li>
+                                <li>
                                     <LogoutLink>
                                         <button className="hover:underline" >Logout</button>
                                     </LogoutLink>
-                                </>
-                                    :
-                                    <>
+                                </li>
+
+                            </>
+                                :
+                                <>
+                                    <li>
                                         <LoginLink>
                                             <button className="hover:underline" >Login</button>
                                         </LoginLink>
-                                    </>
-                            }
-                        </li>
+                                    </li>
+                                </>
+                        }
                     </ul>
                 </nav>
             </div>
