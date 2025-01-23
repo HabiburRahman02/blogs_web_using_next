@@ -12,6 +12,7 @@ const PostDetails = ({ params }) => {
                 setPost(data);
             })
     }, [postId])
+    
 
     return (
         <div className='max-w-3xl mx-auto '>
