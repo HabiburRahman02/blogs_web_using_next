@@ -1,9 +1,10 @@
 "use client"
-import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import Link from 'next/link';
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
 
+    console.log('form nav', user);
     return (
         <div className="bg-gray-800 text-white p-6">
             <div className="container mx-auto flex justify-between items-center">
@@ -17,19 +18,21 @@ const Navbar = () => {
                                 Home
                             </Link>
                         </li>
-                        {/* {user ? ( */}
-                        {/* <li>
-                            <Link href="/profile" className="hover:underline">
-                                Profile
-                            </Link>
-                        </li> */}
-                        {/* ) : ( */}
                         <li>
-                            <LoginLink>
-                                <button className="btn">Login</button>
-                            </LoginLink>
+                            {
+                                user ? <>
+                                    <LogoutLink>
+                                        <button className="hover:underline" >Logout</button>
+                                    </LogoutLink>
+                                </>
+                                    :
+                                    <>
+                                        <LoginLink>
+                                            <button className="hover:underline" >Login</button>
+                                        </LoginLink>
+                                    </>
+                            }
                         </li>
-                        {/* )} */}
                     </ul>
                 </nav>
             </div>
