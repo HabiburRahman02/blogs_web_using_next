@@ -19,14 +19,14 @@ const Navbar = ({ user }) => {
                                 Home
                             </Link>
                         </li>
+                        <li>
+                            <Link href={user ? '/profile' : '/api/auth/login'} className="hover:underline">
+                                Profile
+                            </Link>
+                        </li>
 
                         {
                             user ? <>
-                                <li>
-                                    <Link href="/profile" className="hover:underline">
-                                        Profile
-                                    </Link>
-                                </li>
                                 <li>
                                     <LogoutLink>
                                         <button className="bg-white text-black py-2 px-4 font-semibold rounded-sm hover:bg-gray-200" >Logout</button>
